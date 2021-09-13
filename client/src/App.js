@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react'
+import CodeComponent from './components/CodeComponent/CodeComponent'
+import VideoComponent from './components/VideoComponent/VideoComponent'
+import styles from './App.module.css';
  
 const App= () => {
 
@@ -7,16 +10,17 @@ const MESSAGE_TYPE= {
     CANDIDATE: 'CANDIDATE',
 }
 
-const senders= [];
-let userMediaStream= null
-let displayMediaStream= null;
-
   useEffect(() => {
     const myVideo= document.getElementById('my-video')
     const userVideo= document.getElementById('user-video')
     const startButton= document.getElementById('start')
     const switchButton= document.getElementById('switch')
-    const codeInput= document.getElementById('code')
+    // const codeInput= document.getElementById('code')
+    const codeInput= {value: 1}
+
+    const senders= [];
+    let userMediaStream= null
+    let displayMediaStream= null;
 
     startButton.addEventListener('click', async () => {
 
@@ -122,12 +126,9 @@ let displayMediaStream= null;
   }, [])
 
   return (
-    <div>
-      <input id='code' type='number' />
-      <video id="my-video" controls autoPlay></video>
-      <video id="user-video" controls autoPlay></video>
-      <button id="start">Start</button>
-      <button id="switch">Switch</button>
+    <div className={styles.container}>
+        {/* <CodeComponent /> */}
+        <VideoComponent />
     </div>
   );
 }
