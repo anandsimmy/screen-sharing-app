@@ -63,17 +63,18 @@ wsServer.on('request', request => {
         ))
     })
 })
-
+console.log('app', app);
 if (true || process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
     app.use(express.static(path.join(__dirname, '../client/build')));
-
+    console.log('express static');
     app.get('*', function (req, res) {
+        console.log('response received');
         res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
     });
 };
 
-app.listen(PORT, () => {
-    console.log(`Server is listening at port ${PORT}`)
-})
+// app.listen(PORT, () => {
+//     console.log(`Server is listening at port ${PORT}`)
+// })
 
 module.exports = app;
