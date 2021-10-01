@@ -8,7 +8,7 @@ export const setupConnection = () => {
     
     const myVideo= document.getElementById('my-video')
     const userVideo= document.getElementById('user-video')
-    const startButton= document.getElementById('start')
+    // const startButton= document.getElementById('start')
     const switchButton= document.getElementById('switch')
     // const codeInput= document.getElementById('code')
     const codeInput= {value: 1}

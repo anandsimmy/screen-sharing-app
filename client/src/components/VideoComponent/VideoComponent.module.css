@@ -1,6 +1,12 @@
+.videoWrapper {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
 .myVideo {
     position: absolute;
-    right: 20px;
+    left: 20px;
     top: 20px;
     height: 200px;
     border-radius: 8px;
@@ -8,17 +14,21 @@
 }
 
 .userVideo {
-    height: 100%;
-    width: 177.77777778vh;
-    min-width: 100%;
-    min-height: 56.25vw;
+    height: auto;
+    width: 100vw;
+    object-fit: fill;
 }
 
 .buttonContainer {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+
+.switchIconStyles {
+    height: 50px;
+    cursor: pointer;
 }
