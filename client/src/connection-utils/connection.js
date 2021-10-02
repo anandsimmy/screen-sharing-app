@@ -25,7 +25,7 @@ export const setupConnection = () => {
         userMediaStream= await navigator.mediaDevices.getUserMedia({ audio: false, video: true })
         myVideo.srcObject= userMediaStream
         
-        createPeerConnection(signaling, userMediaStream)
+        signaling.onopen= () => createPeerConnection(signaling, userMediaStream)
     }
 
     //starting automatically
