@@ -27,7 +27,8 @@ export const setupConnection = () => {
 
         // createPeerConnection(signaling, userMediaStream)
         
-        signaling.open= () => {
+        console.log('readyState', signaling.readyState);
+        signaling.onopen= () => {
             console.log('signal opened');
             createPeerConnection(signaling, userMediaStream)
         }
