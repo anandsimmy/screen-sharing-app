@@ -8,8 +8,7 @@
     "client": "cd ./client && npm start",
     "server": "nodemon server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "deploy": "git add . && git commit -m 'added new build' && git push",
-    "heroku-postbuild": "cd client && npm run build"
+    "deploy": "cd ./client && npm run build && cd .. && git add . && git commit -m 'added new build' && git push"
   },
   "keywords": [],
   "author": "",
