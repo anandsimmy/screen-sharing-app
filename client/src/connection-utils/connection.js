@@ -19,13 +19,13 @@ export const setupConnection = () => {
     
     const startConnection = async () => {
         console.log('socket endpoint', `wss://${window.location.hostname}:1337`);
-        const signaling= new WebSocket(`ws://${window.location.hostname}:1337`)
+        const signaling= new WebSocket(`wss://${window.location.hostname}:1337`)
     
         // adding audio and video tracks to peer connection
         userMediaStream= await navigator.mediaDevices.getUserMedia({ audio: false, video: true })
         myVideo.srcObject= userMediaStream
 
-        // createPeerConnection(signaling, userMediaStream)
+        createPeerConnection(signaling, userMediaStream)
         
         console.log('readyState', signaling.readyState);
         signaling.onopen= () => {

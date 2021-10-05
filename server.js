@@ -1,8 +1,10 @@
+const fs= require('fs')
 const express= require('express')
 const cors= require('cors')
-const path = require('path');
+const path = require('path')
 const http= require('http')
-const WebSocketServer= require('websocket').server
+const https= require('https')
+const WebSocketServer= require('websocket').server;
 
 let clients= []
 const peersByCode= {}
@@ -13,14 +15,18 @@ app.use(cors());
 const PORT= process.env.PORT || 5000
 
 // for http-server to setup websocket server
-const httpServer= http.createServer(() => {})
+const httpServer= https.createServer({
+ key: fs.readFileSync(path.join(__dirname, 'cert', 'key.pem')),
+ cert: fs.readFileSync(path.join(__dirname, 'cert', 'cert.pem')),   
+}, app)
+
 httpServer.listen(1337, () => {
     console.log('http server listening at port 1337')
 })
 
 //for websocket server
 const wsServer= new WebSocketServer({
-    httpServer: httpServer
+    httpServer
 })
 
 wsServer.on('request', request => {
@@ -63,7 +69,7 @@ wsServer.on('request', request => {
         ))
     })
 })
-console.log('app', app);
+
 if (true || process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
     app.use(express.static(path.join(__dirname, '/client/build')));
     console.log('express static');
