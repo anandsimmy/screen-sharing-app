@@ -20,6 +20,8 @@ const httpServer= https.createServer({
  cert: fs.readFileSync(path.join(__dirname, 'cert', 'cert.pem')),   
 }, app)
 
+// const httpServer = http.createServer();
+
 httpServer.listen(1337, () => {
     console.log('http server listening at port 1337')
 })
@@ -36,7 +38,7 @@ wsServer.on('request', request => {
     
     clients.forEach(client => client.connection.send(JSON.stringify({
         client: id,
-        text: 'I am connected'
+        text: JSON.stringify({ message_type: 'test', content: 'I am connected' })
         })
     ))
 
@@ -64,7 +66,7 @@ wsServer.on('request', request => {
         clients= clients.filter(client => client.id !== id)
         clients.forEach(client => client.connection.send(JSON.stringify({
                 client: id,
-                text: 'I am leaving'
+                text: JSON.stringify({ message_type: 'test', content: 'I am leaving' })
             })
         ))
     })
