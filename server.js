@@ -18,6 +18,8 @@ const PORT= process.env.PORT || 5000
 const httpServer= https.createServer({
  key: fs.readFileSync(path.join(__dirname, 'cert', 'key.pem')),
  cert: fs.readFileSync(path.join(__dirname, 'cert', 'cert.pem')),   
+ requestCert: true,
+ rejectUnauthorized: false
 }, app)
 
 // const httpServer = http.createServer();
