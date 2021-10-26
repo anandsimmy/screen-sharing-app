@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { setupConnection } from '../../connection-utils/connection';
 import VideoIcon from '../../assets/video-cam.png';
 import ScreenShareIcon from '../../assets/share.png';
 import styles from './VideoComponent.module.css'
@@ -6,6 +7,10 @@ import styles from './VideoComponent.module.css'
 const VideoComponent= () => {
 
   const [appState, setAppState] = useState('video');
+
+  useEffect(()=> {
+    setupConnection();
+  }, [])
   
   return (
     <div className={styles.videoWrapper}>
