@@ -19,7 +19,7 @@ export const setupConnection = () => {
     
     const startConnection = async () => {
         console.log('socket endpoint', `wss://${window.location.hostname}:1337`);
-        const signaling= new WebSocket(`wss://${window.location.hostname}:1337`)
+        const signaling= new WebSocket(`ws://${window.location.hostname}:1337`)
     
         // adding audio and video tracks to peer connection
         userMediaStream= await navigator.mediaDevices.getUserMedia({ audio: false, video: true })
@@ -40,7 +40,7 @@ export const setupConnection = () => {
     // startButton.addEventListener('click', async () => {
     // })
     
-    switchButton.addEventListener('click', async () => {
+    switchButton?.addEventListener('click', async () => {
         if(!displayMediaStream){
             displayMediaStream= await navigator.mediaDevices.getDisplayMedia();
         }
