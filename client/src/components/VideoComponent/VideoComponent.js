@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { setupConnection } from '../../connection-utils/connection';
 import VideoIcon from '../../assets/video-cam.png';
 import ScreenShareIcon from '../../assets/share.png';
-import styles from './VideoComponent.module.css'
- 
-const VideoComponent= () => {
+import styles from './VideoComponent.module.css';
 
+const VideoComponent = () => {
   const [appState, setAppState] = useState('video');
 
-  useEffect(()=> {
+  useEffect(() => {
     setupConnection();
-  }, [])
-  
+  }, []);
+
   return (
     <div className={styles.videoWrapper}>
       <video
@@ -28,17 +27,23 @@ const VideoComponent= () => {
       />
       <div className={styles.buttonContainer}>
         {/* <button id="start">Start</button> */}
-        <img
+        <input
+          type='image'
           alt='switch'
           src={appState === 'video' ? ScreenShareIcon : VideoIcon}
           title={`Switch to ${appState === 'video' ? 'Screen Share' : 'Video'}`}
-          onClick={() =>  setAppState((currentState) => currentState === 'video' ? 'screenShare' : 'video')}
+          onClick={() =>
+            setAppState((currentState) =>
+              currentState === 'video' ? 'screenShare' : 'video'
+            )
+          }
           className={styles.switchIconStyles}
-          id="switch"
+          id='switch'
+          value='Switch'
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default VideoComponent
+export default VideoComponent;
