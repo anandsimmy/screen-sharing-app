@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import CodeComponent from './components/CodeComponent/CodeComponent'
-import VideoComponent from './components/VideoComponent/VideoComponent'
+import CodeComponent from './components/CodeComponent/CodeComponent';
+import VideoComponent from './components/VideoComponent/VideoComponent';
 import styles from './App.module.css';
- 
-const App= () => {
 
+const App = () => {
   return (
     <div className={styles.container}>
       <Router>
@@ -16,6 +15,6 @@ const App= () => {
       </Router>
     </div>
   );
-}
+};
 
 export default App;
