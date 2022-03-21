@@ -12,7 +12,7 @@ const peersByCode = {};
 //for express server
 const app = express();
 app.use(cors());
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 1337;
 
 // for http-server to setup websocket server
 // const httpServer= https.createServer({
@@ -102,6 +102,6 @@ if (
   });
 }
 
-// app.listen(PORT, () => {
-//     console.log(`Express server is listening at port ${PORT}`)
-// })
+app.listen(PORT, () => {
+  console.log(`Express server is listening at port ${PORT}`);
+});
