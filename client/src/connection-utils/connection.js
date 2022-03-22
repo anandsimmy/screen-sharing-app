@@ -19,7 +19,7 @@ export const setupConnection = () => {
     let socketUrl = `ws://${window.location.hostname}:1337`;
     console.log('process.env.NODE_ENV', process.env.NODE_ENV);
     if (process.env.NODE_ENV !== 'development') {
-      socketUrl = '/';
+      socketUrl = `ws://${window.location.hostname}:1337`;
     }
     console.log('socket endpoint', socketUrl, process.env.NODE_ENV);
     const signaling = new WebSocket(socketUrl);
