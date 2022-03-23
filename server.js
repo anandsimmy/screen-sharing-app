@@ -12,7 +12,7 @@ const peersByCode = {};
 //for express server
 const app = express();
 app.use(cors());
-const PORT = process.env.PORT || 1337;
+const PORT = process.env.PORT || 5000;
 
 // for http-server to setup websocket server
 // const httpServer= https.createServer({
