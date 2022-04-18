@@ -8,7 +8,7 @@ const CodeComponent = () => {
     <div className='wrapper'>
       <div className='title'>SHARE YOUR SCREEN</div>
       <button className='button join'>Join Sharing</button>
-      <button className='button share'>Start Sharing</button>
+      {/* <button className='button share'>Start Sharing</button> */}
     </div>
   );
 };
