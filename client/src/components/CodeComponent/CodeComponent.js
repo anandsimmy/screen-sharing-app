@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CodeComponent.css';
+// import './CodeComponent.css';
 
 const CodeComponent = () => {
   const { showJoin, setShowJoin } = useState(false);
