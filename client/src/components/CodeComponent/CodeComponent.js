@@ -9,9 +9,14 @@ const CodeComponent = () => {
       <div className='title'>SHARE YOUR SCREEN</div>
       {showJoin ? (
         <>
-          <label className=''>Please enter joining code</label>
-          <input />
-          <button className='button'>Join</button>
+          <label className='joinLabel'>Enter Room Code</label>
+          <input className='joinInput' />
+          <div className='buttonContainer'>
+            <button className='button'>Join</button>
+            <button className='button back' onClick={() => setShowJoin(false)}>
+              Back
+            </button>
+          </div>
         </>
       ) : (
         <>
