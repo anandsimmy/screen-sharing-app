@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './CodeComponent.css';
 
 const CodeComponent = () => {
-  const [showJoin, setShowJoin] = useState(false);
+  // const [showJoin, setShowJoin] = useState(false);
 
   return (
     <div className='wrapper'>
