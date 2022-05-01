@@ -21,7 +21,7 @@ const CodeComponent = () => {
       ) : (
         <>
           <button className='button join' onClick={() => setShowJoin(true)}>
-            Join Sharing
+            Join Sharing and Start
           </button>
           <button className='button share'>Start Sharing</button>
         </>
