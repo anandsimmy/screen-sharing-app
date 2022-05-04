@@ -1,4 +1,4 @@
-export const setupConnection = () => {
+export const setupConnection = (roomCode) => {
   const MESSAGE_TYPE = {
     SDP: 'SDP',
     CANDIDATE: 'CANDIDATE',
@@ -9,7 +9,7 @@ export const setupConnection = () => {
   // const startButton= document.getElementById('start')
   const switchButton = document.getElementById('switch');
   // const codeInput= document.getElementById('code')
-  const codeInput = { value: 1 };
+  const codeInput = { value: roomCode };
 
   const senders = [];
   let userMediaStream = null;
