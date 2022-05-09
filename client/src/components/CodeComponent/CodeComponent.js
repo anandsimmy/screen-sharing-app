@@ -3,6 +3,7 @@ import './CodeComponent.css';
 
 const CodeComponent = () => {
   const [showJoin, setShowJoin] = useState(false);
+  const [joinCode, setJoinCode] = useState(null);
 
   return (
     <div className='wrapper'>
